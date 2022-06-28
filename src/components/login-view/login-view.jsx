@@ -12,8 +12,10 @@ export function LoginView(props) {
     props.onLoggedIn(username);
   };
 
-  <button onClick={() => { onBackClick(null); }}>Back</button>
-    
+  const openRegView = (e) => {
+    e.preventDefault();
+    props.onRegistration(true);
+  }
 
   return (
     <form>
@@ -26,6 +28,7 @@ export function LoginView(props) {
         <input type="password" value={password} onChange={e => setPassword(e.target.value)} />
       </label>
       <button type="submit" onClick={handleSubmit}>Submit</button>
+      <button type="button" onClick={openRegView}>New in MyFlix</button>
     </form>
   );
 }
