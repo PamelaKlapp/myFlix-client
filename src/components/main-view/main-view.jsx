@@ -49,7 +49,7 @@ class MainView extends React.Component {
     }
     
     render() {
-        const { movies, selectedMovie, user } = this.state;
+        const { movies, selectedMovie, user,regViewOpener } = this.state;
 
         if (!user && regViewOpener === false) 
         return ( <LoginView 
