@@ -8,11 +8,8 @@ export function RegistrationView(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(username, password);
     props.onRegistration(false);
-  };
-
-  <button type="button">Register</button>
+  }
 
   return (
     <form>
