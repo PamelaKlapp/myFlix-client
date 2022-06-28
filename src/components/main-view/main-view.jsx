@@ -41,18 +41,24 @@ class MainView extends React.Component {
         user
       });
     }
-
     
+    onRegistration(bool) {
+      this.setState({
+        regViewOpener: bool,
+      })
+    }
     
-
     render() {
         const { movies, selectedMovie, user } = this.state;
 
-        if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
-    
-        if (movies.length === 0) return <div className="main-view"/>;
+        if (!user && regViewOpener === false) 
+        return ( <LoginView 
+        onLoggedIn={(user) => this.onLoggedIn(user)}
+        onRegistration={(bool) => {this.onRegistration(bool)}} />);
 
-        if (regViewOpener === true) return <RegistrationView />
+        if (regViewOpener === true) return <RegistrationView/> 
+
+        if (movies.length === 0) return <div className="main-view"/>;
     
         return (
           <div className="main-view">
