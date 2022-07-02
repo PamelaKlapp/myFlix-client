@@ -30877,7 +30877,7 @@ exports.default = MovieCard;
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","prop-types":"7wKI2","react-bootstrap/Card":"lAynp","@parcel/transformer-js/src/esmodule-helpers.js":"cKSaC","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"76Su4","react-bootstrap":"3AD9A"}],"lAynp":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","prop-types":"7wKI2","@parcel/transformer-js/src/esmodule-helpers.js":"cKSaC","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"76Su4","react-bootstrap/Card":"lAynp","react-bootstrap":"3AD9A"}],"lAynp":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _classnames = require("classnames");
