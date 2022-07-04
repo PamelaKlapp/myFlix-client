@@ -42,10 +42,7 @@ export function LoginView(props) {
 }
 
 LoginView.propTypes = {
-  user: PropTypes.shape({
-    username: PropTypes.string.isRequired,
-    password: PropTypes.string.isRequired,
-  }),
+  onRegistration: PropTypes.func.isRequired,
   onLoggedIn: PropTypes.func.isRequired,
 };
 
