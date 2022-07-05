@@ -77,15 +77,12 @@ class MainView extends React.Component {
         />
       );
 
-    if (!user)
-      return <LoginView onLoggedIn={(user) => this.onLoggedIn(user)} />;
-
     if (movies.length === 0) return <div className="main-view" />;
 
     if (regViewOpener === true) return <RegistrationView />;
 
     return (
-      <Container>
+      <div>
         <Navbar className="nav-bg-color" expand="lg">
           <Container>
             <Navbar.Brand href="#home">MyFlix MOVIE</Navbar.Brand>
@@ -122,7 +119,7 @@ class MainView extends React.Component {
             ))
           )}
         </Row>
-      </Container>
+      </div>
     );
   }
 }
