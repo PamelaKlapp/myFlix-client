@@ -1,6 +1,14 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import { Form, Button, Container, Nav, Navbar } from "react-bootstrap";
+import {
+  Form,
+  Button,
+  Container,
+  Nav,
+  Navbar,
+  Row,
+  Col,
+} from "react-bootstrap";
 import "./login-view.scss";
 
 export function LoginView(props) {
@@ -21,7 +29,7 @@ export function LoginView(props) {
   };
 
   return (
-    <Container className="main-container">
+    <div>
       <Navbar className="nav-bg-color" expand="lg">
         <Container>
           <Navbar.Brand href="#home">MyFlix MOVIE</Navbar.Brand>
@@ -33,39 +41,44 @@ export function LoginView(props) {
           </Navbar.Collapse>
         </Container>
       </Navbar>
-      <Form className="main-form">
-        <Form.Group controlId="formUsername">
-          <Form.Label>Username:</Form.Label>
-          <Form.Control
-            type="text"
-            onChange={(e) => setUsername(e.target.value)}
-          />
-        </Form.Group>
-        <Form.Group controlId="formPassword">
-          <Form.Label>Password:</Form.Label>
-          <Form.Control
-            type="password"
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </Form.Group>
-        <Button
-          variant="primary"
-          type="submit"
-          className="button-margin"
-          onClick={handleSubmit}
-        >
-          Submit
-        </Button>{" "}
-        <Button
-          variant="info"
-          type="button"
-          className="button-margin"
-          onClick={openRegView}
-        >
-          Sign Up
-        </Button>
-      </Form>
-    </Container>
+
+      <Row>
+        <Col>
+          <Form className="main-form">
+            <Form.Group controlId="formUsername">
+              <Form.Label>Username:</Form.Label>
+              <Form.Control
+                type="text"
+                onChange={(e) => setUsername(e.target.value)}
+              />
+            </Form.Group>
+            <Form.Group controlId="formPassword">
+              <Form.Label>Password:</Form.Label>
+              <Form.Control
+                type="password"
+                onChange={(e) => setPassword(e.target.value)}
+              />
+            </Form.Group>
+            <Button
+              variant="primary"
+              type="submit"
+              className="button-margin"
+              onClick={handleSubmit}
+            >
+              Submit
+            </Button>{" "}
+            <Button
+              variant="info"
+              type="button"
+              className="button-margin"
+              onClick={openRegView}
+            >
+              Sign Up
+            </Button>
+          </Form>
+        </Col>
+      </Row>
+    </div>
   );
 }
 
