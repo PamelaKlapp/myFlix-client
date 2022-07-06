@@ -18,7 +18,7 @@ export function LoginView(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post('https://peliapp-heroku.herokuapp.com/login', {
+    axios.post('http://localhost:1234/login', {
       Username: username,
       Password: password
     })
@@ -30,6 +30,7 @@ export function LoginView(props) {
       console.log('no such user')
     });
   };
+  
 
   const openRegView = (e) => {
     e.preventDefault();
