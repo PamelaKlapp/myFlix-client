@@ -27,16 +27,13 @@ class MainView extends React.Component {
   }
 
   componentDidMount() {
-    axios
-      .get("https://peliapp-heroku.herokuapp.com/movies")
-      .then((response) => {
-        this.setState({
-          movies: response.data,
-        });
-      })
-      .catch((error) => {
-        console.log(error);
+    let accessToken = localStorage.getItem('token');
+    if (accessToken !== null) {
+      this.setState({
+        user: localStorage.getItem('user')
       });
+      this.getMovies(accessToken);
+    }
   }
 
   setSelectedMovie(movie) {
@@ -61,7 +58,7 @@ class MainView extends React.Component {
     });
   }
   getMovies(token) {
-    axios.get('https://peliapp-heroku.herokuapp.com/movies', {
+    axios.get('http://localhost:1234/movies', {
       headers: { Authorization: `Bearer ${token}`}
     })
     .then(response => {
