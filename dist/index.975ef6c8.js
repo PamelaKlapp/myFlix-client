@@ -24776,8 +24776,10 @@ class MainView extends (0, _reactDefault.default).Component {
                     lineNumber: 122,
                     columnNumber: 9
                 }, this),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _.Button), {
-                    onClick: onLoggedOut,
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                    onClick: ()=>{
+                        this.onLoggedOut();
+                    },
                     children: "Logout"
                 }, void 0, false, {
                     fileName: "src/components/main-view/main-view.jsx",
