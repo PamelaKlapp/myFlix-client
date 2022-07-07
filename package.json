@@ -26,6 +26,9 @@
   "devDependencies": {
     "@parcel/transformer-sass": "^2.6.2",
     "buffer": "^6.0.3",
-    "process": "^0.11.10"
+    "process": "^0.11.10",
+    "stream-browserify": "^3.0.0",
+    "url": "^0.11.0",
+    "util": "^0.12.4"
   }
 }
