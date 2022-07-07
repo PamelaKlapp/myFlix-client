@@ -19,10 +19,36 @@ export function RegistrationView(props) {
   const [email, setEmail] = useState("");
   const [birthday, setBirthday] = useState("");
 
+  const [ usernameErr, setUsernameErr ] = useState('');
+  const [ passwordErr, setPasswordErr ] = useState('');
+
+  const validate = () => {
+    let isReq = true;
+    if(!username){
+     setUsernameErr('Username Required');
+     isReq = false;
+    }else if(username.length < 6){
+     setUsernameErr('Username must be 6 characters long');
+     isReq = false;
+    }
+    if(!password){
+     setPasswordErr('Password Required');
+     isReq = false;
+    }else if(password.length < 8){
+     setPassword('Password must be 8 characters long');
+     isReq = false;
+    }
+
+    return isReq;
+}
+
   const handleSubmit = (e) => {
     e.preventDefault();
+    const isReq = validate();
+  if(isReq) {
     props.onRegistration(false);
   };
+}
 
   return (
     <div>
@@ -53,6 +79,7 @@ export function RegistrationView(props) {
                       required
                       placeholder="Enter Username"
                     />
+                    {usernameErr && <p>{usernameErr}</p>}
                   </Form.Group>
 
                   <Form.Group>
@@ -64,6 +91,7 @@ export function RegistrationView(props) {
                       required
                       placeholder="Enter your Password"
                     />
+                    {passwordErr && <p>{passwordErr}</p>}
                     <Form.Text className="text-muted">
                       Password must contain a minimun of 8 charachters
                     </Form.Text>
