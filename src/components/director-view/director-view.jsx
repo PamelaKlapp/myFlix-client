@@ -1,20 +1,18 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import React from "react";
+import { Button, Card } from "react-bootstrap";
 
 export class DirectorView extends React.Component {
     render() {
-        const {movie} = this.props;
+        const { director} = this.props;
 
     return (
       <Card style={{ marginTop: "5%" }}>
         <Card.Img variant="top" src={movie.ImagePath} />
         <Card.Body>
-          <Card.Title>{movie.Title}</Card.Title>
-          <Link to={`/movies/${movie._id}`}>
-          <Button onClick={() => onMovieClick(movie)} variant="link">
-            Open
-          </Button>
-          </Link>
+          <Card.Title>{director.name}</Card.Title>
+          <Card.Text>{director.description}</Card.Text>
+          <Button onClick={goBack}>Back</Button>
         </Card.Body>
       </Card>
     );
