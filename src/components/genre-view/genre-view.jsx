@@ -1,21 +1,17 @@
 import React from "react";
-import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
+import { Button, Card } from "react-bootstrap";
 
 export class GenreView extends React.Component {
     render() {
-        const {movie} = this.props;
+        const { genre} = this.props;
 
     return (
       <Card style={{ marginTop: "5%" }}>
         <Card.Img variant="top" src={movie.ImagePath} />
         <Card.Body>
-          <Card.Title>{movie.Title}</Card.Title>
-          <Link to={`/movies/${movie._id}`}>
-          <Button onClick={() => onMovieClick(movie)} variant="link">
-            Open
-          </Button>
-          </Link>
+          <Card.Title>{genre.name}</Card.Title>
+          <Card.Text>{genre.description}</Card.Text>
+          <Button onClick={goBack}>Back</Button>
         </Card.Body>
       </Card>
     );
