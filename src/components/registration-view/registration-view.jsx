@@ -1,5 +1,17 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
+import {
+  Form,
+  Button,
+  Card,
+  CardGroup,
+
+  Col,
+  Row,
+ 
+} from "react-bootstrap";
+import "./registration-view.scss";
+import { Link } from "react-router-dom";
 
 export function RegistrationView(props) {
   const [username, setUsername] = useState("");
@@ -7,11 +19,6 @@ export function RegistrationView(props) {
   const [email, setEmail] = useState("");
   const [birthday, setBirthday] = useState("");
 
-<<<<<<< Updated upstream
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    props.onRegistration(false);
-=======
   const [ usernameErr, setUsernameErr ] = useState('');
   const [ passwordErr, setPasswordErr ] = useState('');
   const [ emailErr, setEmailErr] = useState('');
@@ -66,61 +73,11 @@ export function RegistrationView(props) {
     .catch(e => {
       console.log('error registering the user')
     });
->>>>>>> Stashed changes
   };
+}
 
   return (
-<<<<<<< Updated upstream
-    <form>
-      <label>
-        Username:
-        <input
-          type="text"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-        />
-      </label>
-      <label>
-        Password:
-        <input
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-      </label>
-      <label>
-        Email:
-        <input
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-      </label>
-      <label>
-        Birthday:
-        <input
-          type="birthday"
-          value={birthday}
-          onChange={(e) => setBirthday(e.target.value)}
-        />
-      </label>
-      <button type="submit" onClick={handleSubmit}>
-        Submit
-      </button>
-    </form>
-=======
-    <div>
-      <Navbar className="nav-bg-color" expand="lg">
-        <Container>
-          <Navbar.Brand href="#home">MyFlix MOVIE</Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="me-auto">
-              <Nav.Link href="#home">HOME</Nav.Link>
-            </Nav>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
+    
       <Row>
         <Col>
           <CardGroup>
@@ -191,8 +148,6 @@ export function RegistrationView(props) {
           </CardGroup>
         </Col>
       </Row>
-    </div>
->>>>>>> Stashed changes
   );
 }
 
