@@ -8,6 +8,7 @@ import {
   Nav,
   Container,
   NavDropdown,
+  Button,
 } from "react-bootstrap/";
 
 import { RegistrationView } from "../registration-view/registration-view";
@@ -58,7 +59,7 @@ class MainView extends React.Component {
     });
   }
   getMovies(token) {
-    axios.get('http://localhost:1234/movies', {
+    axios.get('https://peliapp-heroku.herokuapp.com/movies', {
       headers: { Authorization: `Bearer ${token}`}
     })
     .then(response => {
@@ -69,6 +70,13 @@ class MainView extends React.Component {
     })
     .catch(function (error) {
       console.log(error);
+    });
+  }
+  onLoggedOut() {
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
+    this.setState({
+      user: null
     });
   }
 
@@ -134,6 +142,7 @@ class MainView extends React.Component {
             ))
           )}
         </Row>
+        <Button onClick={onLoggedOut}>Logout</Button>
       </div>
     );
   }
