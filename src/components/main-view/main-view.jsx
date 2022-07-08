@@ -1,7 +1,6 @@
 import React from "react";
 import axios from "axios";
 
-
 import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 
 import { RegistrationView } from "../registration-view/registration-view";
@@ -9,15 +8,12 @@ import { LoginView } from "../login-view/login-view";
 import MovieCard from "../movie-card/movie-card";
 import MovieView from "../movie-view/movie-view";
 import { Menubar } from "../navbar/navbar";
-import {GenreView} from "../genre-view/genre-view";
-import {DirectorView} from "../director-view/director-view"
+import { GenreView } from "../genre-view/genre-view";
+import { DirectorView } from "../director-view/director-view";
 import { Menubar } from "../navbar/navbar";
+import {ProfileView} from "../profile-view/profile-view"
 
-import {
-  Row,
-  Col,
-  Container,
-} from "react-bootstrap/";
+import { Row, Col, Container } from "react-bootstrap/";
 
 export class MainView extends React.Component {
   constructor() {
@@ -79,22 +75,20 @@ export class MainView extends React.Component {
               exact
               path="/"
               render={() => {
-                if (!user)
-                  return
-                    <Col>
-                      <LoginView onLoggedIn={(user) => this.onLoggedIn(user)} />
-                    </Col>
-                  
+                if (!user) return;
+                <Col>
+                  <LoginView onLoggedIn={(user) => this.onLoggedIn(user)} />
+                </Col>;
+
                 if (movies.length === 0) return <div className="main-view" />;
 
                 return movies.map((m) => (
                   <Col md={3} key={m._id}>
                     <MovieCard movie={m} />
                   </Col>
-                ))
+                ));
               }}
             />
-            <Route path="/" />
             <Route
               path="/register"
               render={() => {
@@ -109,12 +103,11 @@ export class MainView extends React.Component {
             <Route
               path="/movies/:movieId"
               render={({ match, history }) => {
-                if (!user)
-                  return
-                    <Col>
-                      <LoginView onLoggedIn={(user) => this.onLoggedIn(user)} />
-                    </Col>
-                  
+                if (!user) return;
+                <Col>
+                  <LoginView onLoggedIn={(user) => this.onLoggedIn(user)} />
+                </Col>;
+
                 if (movies.length === 0) return <div className="main-view" />;
                 return (
                   <Col md={8}>
@@ -130,11 +123,10 @@ export class MainView extends React.Component {
             <Route
               path="/genre/:Name"
               render={({ match }) => {
-                if (!user)
-                  return
-                    <Col>
-                      <LoginView onLoggedIn={(user) => this.onLoggedIn(user)} />
-                    </Col>
+                if (!user) return;
+                <Col>
+                  <LoginView onLoggedIn={(user) => this.onLoggedIn(user)} />
+                </Col>;
                 if (movies.length === 0) return <div className="main-view" />;
                 return (
                   <Col md={8}>
@@ -152,11 +144,10 @@ export class MainView extends React.Component {
             <Route
               path="/directors/:Name"
               render={({ match, history }) => {
-                if (!user)
-                  return
-                    <Col>
-                      <LoginView onLoggedIn={(user) => this.onLoggedIn(user)} />
-                    </Col>
+                if (!user) return;
+                <Col>
+                  <LoginView onLoggedIn={(user) => this.onLoggedIn(user)} />
+                </Col>;
                 if (movies.length === 0) return <div className="main-view" />;
                 return (
                   <Col md={8}>
@@ -167,6 +158,20 @@ export class MainView extends React.Component {
                         ).Director
                       }
                       onBlackClick={() => history.goBack()}
+                    />
+                  </Col>
+                );
+              }}
+            />
+            <Route
+              path={`/users/${user}`}
+              render={({ history }) => {
+                if (!user) return <Redirect to="/" />;
+                return (
+                  <Col>
+                    <ProfileView
+                      user={user}
+                      onBackClick={() => history.goBack()}
                     />
                   </Col>
                 );
