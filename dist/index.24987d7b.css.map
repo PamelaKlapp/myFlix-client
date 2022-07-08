@@ -1,0 +1,1 @@
+{"mappings":"AAAA;;;;ACEA","sources":["src/components/navbar/navbar.scss","src/index.scss"],"sourcesContent":[".nav-bg-color{\n    background-color: rgb(209, 68, 92);\n}","$color: steelblue;\n\n.my-flix {\n  color: $color;\n}"],"names":[],"version":3,"file":"index.24987d7b.css.map","sourceRoot":"/__parcel_source_root/"}
