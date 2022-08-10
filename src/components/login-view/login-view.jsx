@@ -8,7 +8,6 @@ import {
 } from "react-bootstrap";
 import "./login-view.scss";
 import axios from "axios";
-import { Link } from "react-router-dom";
 
 export function LoginView(props) {
   const [username, setUsername] = useState("");
