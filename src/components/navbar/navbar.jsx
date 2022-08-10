@@ -32,7 +32,7 @@ export function Menubar({user}) {
                         )}
                         {isAuth() && (<Button variant="link" onClick={()=>{this.onLoggedOut()}}>Logout</Button>
                         )}
-                        {!isAuth() && (<Nav.Link href="/">Sign In</Nav.Link>
+                        {!isAuth() && (<Nav.Link href="/login">Sign In</Nav.Link>
                         )}
                         {!isAuth() && (<Nav.Link href="/register">Sign up</Nav.Link>
                         )}
