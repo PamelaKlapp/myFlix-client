@@ -23,5 +23,3 @@ export function UpdateUser ({handleSubmit, handleUpdate}) {
         </div>
     )
 }
-
-export default UpdateUser

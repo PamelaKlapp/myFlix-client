@@ -1,0 +1,18 @@
+*{
+    color: #112A46
+}
+.row{
+    padding-top: 10%;
+}
+.card-body{  
+    background: linear-gradient(130deg, rgba(172,200,229,1) 35%, rgba(99,210,232,1) 100%);
+    border-radius: 2%;
+    border-style: none;
+    box-shadow: 0px 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.button{
+    box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.2), 3px 2px 2px 0 rgba(0, 0, 0, 0.19);
+}
+.row{
+    height: 100%;
+}

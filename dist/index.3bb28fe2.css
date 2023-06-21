@@ -1,9 +1,23 @@
+* {
+  color: #112a46;
+}
+
+.card-body {
+  background: linear-gradient(130deg, #acc8e5 35%, #63d2e8 100%);
+  border-style: none;
+  border-radius: 2%;
+  box-shadow: 0 4px 8px #0003, 0 6px 20px #00000030;
+}
+
+.button {
+  box-shadow: 1px 1px 2px #0003, 3px 2px 2px #00000030;
+}
 
 
 
-
-.nav-bg-color {
-  background-color: #d1445c;
+.background-nav {
+  background: linear-gradient(130deg, #8f959b 35%, #5a7379 100%);
+  padding-top: 0;
 }
 
 .fav-movie {
